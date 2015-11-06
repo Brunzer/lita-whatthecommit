@@ -15,7 +15,7 @@ module Lita
       def getCommit(response)
         name = getName(response.user.name)
         
-        case rand(5)
+        case rand(6)
           when 0
             response.reply("How about this #{name}?")
           when 1
@@ -25,12 +25,14 @@ module Lita
           when 3
             response.reply("The laziness you extrude to us all astounds me, #{name}")
           when 4
-            response.reply("Ok then...")
+            response.reply("OK then...")
+          when 5
+            response.reply("OK, but this is the last time")
         end
 
         http_response = http.get("http://whatthecommit.com/index.txt")
         commit = http_response.body
-        response.reply(">>>#{commit}")
+        response.reply(">>>git commit -m '#{commit.gsub("\n","")}'")
 
         if commit.include? "fuck" or commit.include? "crap" or commit.include? "shit"
           arbitraryComment(response, 3)

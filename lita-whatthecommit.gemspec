@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-whatthecommit"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Jeff Brunsek"]
   spec.email         = ["jbrunsek@gmail.com"]
   spec.description   = "Get help with humorous commit messages"
